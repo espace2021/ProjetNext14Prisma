@@ -3,6 +3,55 @@ import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
+export const QueryLivPopulatedPagination=async(request)=>{
+
+  const page_str = request.nextUrl.searchParams.get("page");
+  const limit_str = request.nextUrl.searchParams.get("limit");
+
+  const page = page_str ? parseInt(page_str, 10) : 1;
+  const limit = limit_str ? parseInt(limit_str, 10) : 10;
+  const skip = (page - 1) * limit;
+
+  try {
+    const list1 = await prisma.livres.findMany(
+      {
+        skip,
+        take: limit,
+        include: {
+            specialites: {
+              select: {
+                id : true,
+                nomspecialite: true,
+              },
+            },
+            editeurs: {
+              select: {
+                id : true,
+                maisonedit: true,
+              },
+            },
+            livre_auteur: {
+              include: {
+                auteurs: {
+                  select: {
+                    id : true,
+                    nomauteur: true,
+                  },
+                }
+              }
+            }
+          } 
+       }
+     )
+    return list1
+  } catch (error) {
+      console.log(error)
+  }
+  finally{
+      prisma.$disconnect()
+  }
+}
+
 export const QueryLivPopulated=async()=>{
   try {
     const list1 = await prisma.livres.findMany({
@@ -52,9 +101,9 @@ export const QueryLiv=async()=>{
   }
 }
 
-export async function GET() {
+export async function GET(request) {
  
-  const livres = await QueryLivPopulated()
+  const livres = await QueryLivPopulatedPagination(request)
 
 return NextResponse.json(livres);
 }
