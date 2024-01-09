@@ -5,8 +5,6 @@ import { Box } from '@mui/material';
 import Image from "next/image"
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 
-import axios from 'axios';
-
 const Listlivres = ({livres}) => {
 
   const[searchTitre,setsearchTitre]=useState()
@@ -37,9 +35,12 @@ useEffect(() => {
     try {
 
   let url = process.env.URL +"/api/livres"+ `?page=${pagination.pageIndex+1}&limit=${pagination.pageSize}`
-  const json = await  axios.get(url)
-  setLivresData(json.data.livres);
-  setRowCount(json.data.nbRows);
+
+  const response = await fetch(url);
+  const data = await response.json();
+ 
+  setLivresData(data.livres);
+  setRowCount(data.nbRows);
   
 } catch (error) {
   setIsError(true);
@@ -96,7 +97,7 @@ sorting,
               height="100"
               width="100"
               style={{maxWidth:'100px', maxHeight: "100px" }}
-              priority={false}
+              priority={true}
             />
 
     
