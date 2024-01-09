@@ -38,9 +38,8 @@ useEffect(() => {
 
   let url = process.env.URL +"/api/livres"+ `?page=${pagination.pageIndex+1}&limit=${pagination.pageSize}`
   const json = await  axios.get(url)
-       console.log(json)   
-  setLivresData(json.data);
-  setRowCount(json.data.length);
+  setLivresData(json.data.livres);
+  setRowCount(json.data.nbRows);
   
 } catch (error) {
   setIsError(true);
@@ -97,6 +96,7 @@ sorting,
               height="100"
               width="100"
               style={{maxWidth:'100px', maxHeight: "100px" }}
+              priority={false}
             />
 
     
@@ -194,7 +194,7 @@ return (
     <form className="row">
       <div className="col-md-4 d-flex align-items-center">
         <span className="input-group-text"><ManageSearchIcon/></span>
-        <input className="form-control col-md-2" type="search" placeholder="Raccourci Filtre Titre" aria-label="Search" value={searchTitre} onChange={(e)=>handlefind(e)}/>
+        <input className="form-control col-md-2" type="search" placeholder="Raccourci Filtre Titre" aria-label="Search" onChange={(e)=>handlefind(e)}/>
       </div>        
   </form>
 <MaterialReactTable table={table} />

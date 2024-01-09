@@ -104,8 +104,14 @@ export const QueryLiv=async()=>{
 export async function GET(request) {
  
   const livres = await QueryLivPopulatedPagination(request)
+  const livresAll = await QueryLiv()
+  let json_response = {
+    status: "success",
+    nbRows: livresAll.length,
+    livres,
+  };
 
-return NextResponse.json(livres);
+return NextResponse.json(json_response);
 }
 
 // CREATE DATA
