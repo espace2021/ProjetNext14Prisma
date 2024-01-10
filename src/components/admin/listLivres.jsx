@@ -126,13 +126,13 @@ sorting,
     {
     accessorKey: 'prix',
     header: 'Prix',
-    size: 100,
+    size: 50,
     },
     {
     
     accessorKey: 'qtestock',
     header: 'Stock',
-    size: 100,
+    size: 50,
     },
     {
       accessorKey: 'specialites.nomspecialite',
@@ -160,7 +160,7 @@ sorting,
      
      enableRowSelection: true,
      
-     initialState: { showColumnFilters: true },
+     initialState: { showColumnFilters: false },
      manualFiltering: true,
      manualPagination: true,
      manualSorting: true,

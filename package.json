@@ -14,6 +14,7 @@
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
+    "@fullpage/react-fullpage": "^0.1.40",
     "@mui/icons-material": "^5.15.3",
     "@mui/material": "^5.15.3",
     "@prisma/client": "^5.7.1",
@@ -25,7 +26,8 @@
     "prisma": "^5.7.1",
     "react": "^18",
     "react-bootstrap": "^2.9.2",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-pro-sidebar": "^1.1.0-alpha.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
