@@ -8,7 +8,7 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 const Listlivres = ({livres}) => {
 
   const[searchTitre,setsearchTitre]=useState()
-  const[livresdata,setLivresData]=useState(livres)
+  const[livresdata,setLivresData]=useState(livres.livresDB)
 
  // fetching state
 
@@ -39,7 +39,7 @@ useEffect(() => {
   const response = await fetch(url);
   const data = await response.json();
  
-  setLivresData(data.livres);
+  setLivresData(data.livresDB);
   setRowCount(data.nbRows);
   
 } catch (error) {
@@ -65,13 +65,12 @@ sorting,
 
   
   const handlefind = (e) => {
-    
     const searchTerm = e.target.value;
     setsearchTitre(searchTerm);
     if (searchTerm === '') {
-      setLivresData(livres);
+      setLivresData(livres.livresDB);
     } else {
-      setLivresData(livres.filter((item) => {
+      setLivresData(livres.livresDB.filter((item) => {
         return item.titre.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
       }));
     }
