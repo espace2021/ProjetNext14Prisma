@@ -1,4 +1,12 @@
-import ListLivres from '@/components/admin/listLivres';
+import dynamic from 'next/dynamic';
+import Loading from './loading';
+
+const ListLivres = dynamic(() => import('@/components/admin/listLivres'), { 
+  loading: () => <Loading />,
+  ssr: false,
+});
+
+//import ListLivres from '@/components/admin/listLivres';
 
 const getBooks=async()=>{
 const response = await fetch(process.env.URL +"/api/livres", { cache: 'no-store' });
@@ -11,7 +19,7 @@ const ProductPage = async() =>{
     
   return (
    <div className="container">
-      <ListLivres livres={livres}/>
+      <ListLivres livres={livres}/>  
     </div>
   )
 }

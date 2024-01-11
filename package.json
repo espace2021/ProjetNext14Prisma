@@ -27,6 +27,7 @@
     "react": "^18",
     "react-bootstrap": "^2.9.2",
     "react-dom": "^18",
+    "react-loading": "^2.0.3",
     "react-pro-sidebar": "^1.1.0-alpha.1"
   },
   "devDependencies": {
