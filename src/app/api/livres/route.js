@@ -108,7 +108,7 @@ export async function GET(request) {
   let json_response = {
     status: "success",
     nbRows: livresAll.length,
-    livresDB
+    livresDB 
   };
 
 return NextResponse.json(json_response);
