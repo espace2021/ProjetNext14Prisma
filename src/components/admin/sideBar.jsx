@@ -40,14 +40,14 @@ const SideBar = () => {
       </MenuItem>
       <MenuItem component={<Link href="/admin/dashboard" />}> <DashboardIcon/> Dashboard </MenuItem>
       <MenuItem component={<Link href="/admin/livres" />}> <LibraryBooksIcon/> Livres </MenuItem>
-      <MenuItem component={<Link href="/admin/auteurs" />}> <SupervisedUserCircleIcon/> Auteurs </MenuItem>
-      <MenuItem component={<Link href="/admin/editeurs" />}> <WbShadeIcon/> Editeurs</MenuItem>
-      <MenuItem component={<Link href="/admin/specialites" />}> <FeaturedPlayListIcon/> Spécialités</MenuItem>
-      <MenuItem component={<Link href="/admin/users" />}> <GroupIcon/> Utilisateurs </MenuItem>
-      <MenuItem component={<Link href="/admin/orders" />}> <ReceiptIcon/> Commandes </MenuItem>
-      <MenuItem component={<Link href="/admin/calendars" />}> <CalendarMonthIcon/> Calendrier </MenuItem>
-      <MenuItem component={<Link href="/admin/chart" />}> <BarChartIcon/> Chart </MenuItem>
-      <MenuItem component={<Link href="/admin/theme" />}> <LightModeIcon/> Thème </MenuItem>
+      <MenuItem> <SupervisedUserCircleIcon/> Auteurs </MenuItem>
+      <MenuItem> <WbShadeIcon/> Editeurs</MenuItem>
+      <MenuItem> <FeaturedPlayListIcon/> Spécialités</MenuItem>
+      <MenuItem> <GroupIcon/> Utilisateurs </MenuItem>
+      <MenuItem> <ReceiptIcon/> Commandes </MenuItem>
+      <MenuItem> <CalendarMonthIcon/> Calendrier </MenuItem>
+      <MenuItem> <BarChartIcon/> Chart </MenuItem>
+      <MenuItem> <LightModeIcon/> Thème </MenuItem>
     </Menu>
   </Sidebar>
   )
