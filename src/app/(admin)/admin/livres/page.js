@@ -8,10 +8,11 @@ const ListLivres = dynamic(() => import('@/components/admin/listLivres'), {
 
 //import ListLivres from '@/components/admin/listLivres';
 
-const getBooks=async()=>{
+const getBooks=async()=>{ 
 const response = await fetch(process.env.URL +"/api/livres", { cache: 'no-store' });
-
+console.log(response)
 const data = await response.json();
+
 return data;
 }
 const ProductPage = async() =>{
