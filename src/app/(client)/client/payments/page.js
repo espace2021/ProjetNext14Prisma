@@ -6,12 +6,19 @@ import { useRouter } from 'next/navigation'
 
 const Pay = () => {
     
-  const router = useRouter()
+const router = useRouter()
+
+const total =100;
+const firstName= "Hassan"
+const lastName="Hachicha"
+const phoneNumber= 98123456
+const email="sandrahammamitlili@gmail.com"
+const orderId=1234657
 
     const objPay={
         "receiverWalletId": "65a3e74c3952f91b26c5c388",
         "token": "TND",
-        "amount": 100,
+        "amount": total,
         "type": "immediate",
         "description": "payment description",
         "acceptedPaymentMethods": [
@@ -22,15 +29,15 @@ const Pay = () => {
         "lifespan": 10,
         "checkoutForm": true,
         "addPaymentFeesToAmount": true,
-        "firstName": "Jane",
-        "lastName": "Doe",
-        "phoneNumber": "98656677",
-        "email": "sandrahammamitlili@gmail.com",
-        "orderId": "1234657",
-        "webhook": "https://merchant.tech/api/notification_payment",
+        "firstName": firstName,
+        "lastName": lastName,
+        "phoneNumber": phoneNumber,
+        "email": email,
+        "orderId": orderId,
+        "webhook": "merchant.tech/api/notification_payment",
         "silentWebhook": true,
-        "successUrl": "https://dev.konnect.network/gateway/payment-success",
-        "failUrl": "https://dev.konnect.network/gateway/payment-failure",
+        "successUrl": "https://gateway.sandbox.konnect.network/payment-success",
+        "failUrl": "https://gateway.sandbox.konnect.network/payment-failure",
         "theme": "light"
       }
 
