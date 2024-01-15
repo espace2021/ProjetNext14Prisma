@@ -9,7 +9,7 @@ const Pay = () => {
   const router = useRouter()
 
     const objPay={
-        "receiverWalletId": "65a3e7f13678c27c063d33a0",
+        "receiverWalletId": "65a3e74c3952f91b26c5c388",
         "token": "TND",
         "amount": 100,
         "type": "immediate",
@@ -36,10 +36,10 @@ const Pay = () => {
 
       const Payment=()=>{
         const headers = {
-              'x-api-key': '65a3e7f13678c27c063d3395:ycYksqWjAO3zbzklP8apn'
+              'x-api-key': '65a3e74c3952f91b26c5c384:wuIg9Sq54CosG1MhbP'
         }
 
-        axios.post("https://api.konnect.network/api/v2/payments/init-payment", objPay, {
+        axios.post("https://api.preprod.konnect.network/api/v2/payments/init-payment", objPay, {
     headers: headers
   })
         .then((response) => {
