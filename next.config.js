@@ -4,7 +4,8 @@ const nextConfig = {
         domains:["res.cloudinary.com"]
         },
     env:{
-        URL : "https://projet-next14-prisma.vercel.app"
+        URL : "http://localhost:3000",
+        SECRET : "azerty"
     }  ,
     async headers() {
         return [
