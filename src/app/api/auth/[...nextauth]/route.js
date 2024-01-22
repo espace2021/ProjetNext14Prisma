@@ -51,14 +51,14 @@ export const authOptions = {
         GoogleProvider({
             clientId: "31017781977-c2mev6djp0jd9dte3hcqal7v8ha2tp27.apps.googleusercontent.com",
             clientSecret: "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",
-            profile(profile) { console.log(profile)
+            profile(profile) { 
                 return { role: profile.role ?? "user", email : profile.email , name : profile.name,  id: profile.sub}
               },
         }),
         GitHubProvider({
             clientId: "8ae91e7483780c86e578",
             clientSecret: "a10f093c2d1eb2253b7e3149e8f42b11dafe9fc0",
-            profile(profile) { console.log(profile)
+            profile(profile) { 
                 return { role: profile.role ?? "user", email : profile.email , name : profile.name,  id: profile.id}
               },
           }),
@@ -66,18 +66,18 @@ export const authOptions = {
             clientId: "login-app",
             clientSecret: "d52928db-fe6e-474a-bbf5-6f1629c0dba1",
             issuer: "http://localhost:8180/realms/myRealm",
-            profile(profile) { console.log(profile)
+            profile(profile) { 
                 return { role: profile.role ?? "user", email : profile.email , name : profile.name,  id: profile.sub}
               },
           })
     ],
     secret: process.env.SECRET,
     callbacks: {
-      async jwt({ token, user }) { console.log(token)
+      async jwt({ token, user }) { 
         if (user) token.role = user.role;
         return token;
       },
-      async session({ session, token }) {
+      async session({ session, token }) { 
         if (session?.user) session.user.role = token.role;
         return session;
       },

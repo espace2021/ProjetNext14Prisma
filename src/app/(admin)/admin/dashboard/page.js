@@ -1,6 +1,7 @@
 import React from 'react'
 
-const page = () => {
+const page = async() => {
+ 
   return (
   <div className="container">
      <img className="img-fluid"
